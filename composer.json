@@ -1,0 +1,14 @@
+{
+    "name": "ammarfaizi2/stackoverflow-query",
+    "description": "Stackoverflow Query",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Ammar Faizi",
+            "email": "ammarfaizi2@gmail.com"
+        }
+    ],
+    "minimum-stability": "stable",
+    "require": {}
+}
