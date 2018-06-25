@@ -33,6 +33,11 @@ final class Stackoverflow
 	private $cachedData;
 
 	/**
+	 * @var int
+	 */
+	private $page;
+
+	/**
 	 * Constructor.
 	 * 
 	 * @param string $query
@@ -69,6 +74,15 @@ final class Stackoverflow
 	}
 
 	/**
+	 * @param int $page
+	 * @return void
+	 */
+	public function setPage(int $page)
+	{
+		$this->page = $page;
+	}
+
+	/**
 	 * @return bool
 	 */
 	private function isCached()
@@ -88,7 +102,7 @@ final class Stackoverflow
 	private function onlineSearch()
 	{
 		$ch = curl_init(
-			"https://stackoverflow.com/search?q=".urlencode($this->query)
+			"https://stackoverflow.com/search?page=".($this->page)."&tab=Relevance&q=".urlencode($this->query)
 		);
 		if (! defined("CURL_HTTP_VERSION_2_0")) {
     		define("CURL_HTTP_VERSION_2_0", 3);
@@ -177,3 +191,4 @@ final class Stackoverflow
 class StackoverflowException extends Exception
 {	
 }
+
