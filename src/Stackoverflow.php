@@ -87,7 +87,6 @@ final class Stackoverflow
 	 */
 	private function onlineSearch()
 	{
-		// var_dump("https://stackoverflow.com/search?q=".urlencode($this->query));die;
 		$ch = curl_init(
 			"https://stackoverflow.com/search?q=".urlencode($this->query)
 		);
