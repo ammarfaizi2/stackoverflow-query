@@ -63,7 +63,7 @@ final class Stackoverflow
 
 		if (! is_dir($this->cachePath)) {
 			throw new StackoverflowException(
-				"Cannot cache storage directory ".$this->cachePath
+				"Cannot create cache storage directory ".$this->cachePath
 			);
 		}
 	}
